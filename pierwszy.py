@@ -49,3 +49,25 @@ print(name)
 # mypy
 # pip install mypy
 # mypy .\pierwszy.py
+
+tekst = "Witaj Świecie"
+
+print(tekst)
+print(type(tekst))
+
+# tesksty sa niemutowalne
+""" Return a copy of the string converted to uppercase. """
+tekst.upper()
+print(tekst)
+print(tekst.upper())  # WITAJ ŚWIECIE
+zmienna = tekst.upper()
+print("Zmienna:", zmienna)  # Zmienna: WITAJ ŚWIECIE
+
+print(tekst.lower())
+print(tekst.capitalize())  # Witaj świecie
+
+zmienna1 = "GROSS"
+zmienna2 = "groẞ"
+
+print(zmienna1.lower() == zmienna2.lower())  # == porównaniwe, False
+print(zmienna1.casefold() == zmienna2.casefold())  # True
