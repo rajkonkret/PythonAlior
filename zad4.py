@@ -29,3 +29,29 @@ df.info()
 #  6   People Process or Technology Tag  42 non-null     object
 # dtypes: int64(1), object(6)
 # memory usage: 2.4+ KB
+
+print(df.head()) # 5 pierwszych
+
+print(df.tail()) # 5 ostatnich
+# [5 rows x 7 columns]
+#     Year  ... People Process or Technology Tag
+# 37  2012  ...                       Technology
+# 38  2012  ...                           People
+# 39  2015  ...                       Technology
+# 40  2015  ...                       Technology
+# 41  2018  ...                          Process
+print(df.tail(10))
+# [5 rows x 7 columns]
+#     Year  ... People Process or Technology Tag
+# 32  2007  ...                       Technology
+# 33  2008  ...                       Technology
+# 34  2009  ...                       Technology
+# 35  2010  ...                       Technology
+# 36  2011  ...                           People
+# 37  2012  ...                       Technology
+# 38  2012  ...                           People
+# 39  2015  ...                       Technology
+# 40  2015  ...                       Technology
+# 41  2018  ...                          Process
+#
+# [10 rows x 7 columns]
