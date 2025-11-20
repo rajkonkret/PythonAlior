@@ -19,9 +19,9 @@ df_new.info()  # 6   Runtime
 df.rename(columns={"Runtime (Minutes)": "Runtime"}, inplace=True)  # inplce - zmiana oryginału
 print(df.info())  # 6   Runtime
 
-df.isnull().sum().to_json("dane2345.json") # policzone ile jest null
+df.isnull().sum().to_json("dane2345.json")  # policzone ile jest null
 
-movies_df_not_null = df.dropna() # usun nnulle (NaN), zwraca nowa kolekcję
+movies_df_not_null = df.dropna()  # usun nnulle (NaN), zwraca nowa kolekcję
 movies_df_not_null.info()
 # <class 'pandas.core.frame.DataFrame'>
 # Index: 839 entries, Guardians of the Galaxy to Nine Lives
@@ -61,3 +61,39 @@ rev.info()
 # 873 non-null    float64
 # dtypes: float64(1)
 # memory usage: 47.9+ KB
+print(df.columns)
+# Index(['Rank', 'Genre', 'Description', 'Director', 'Actors', 'Year', 'Runtime',
+#        'Rating', 'Votes', 'Revenue (Millions)', 'Metascore'],
+#       dtype='object')
+
+# for - petla iteracyjna
+for i in range(10):  # od 0 do 9
+    print(i)
+    print(i)
+    print(i)
+    print(i)
+print("poza pętlą")
+
+for i in df.columns:
+    print(i)
+
+# list comprehensions
+df.columns = [col.lower() for col in df]
+print(df.tail())
+print(rev.mean())  # 83.01956471935851
+print(rev.median()) # 48.02
+print(rev.mode()) # dominanta, najczęściej wystepująca wrtosć
+
+# posortowanie
+print(df.sort_values(by="rating"))
+print(df['rating'])
+
+count_movies = df.groupby(['genre']).agg({"year": "count"}).sort_values(by="year", ascending=False)
+print(count_movies)
+# genre
+# Action,Adventure,Sci-Fi     50
+# Drama                       48
+# Comedy,Drama,Romance        35
+# Comedy                      32
+# Drama,Romance               31
+# ...                        ...
