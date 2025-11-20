@@ -81,8 +81,8 @@ for i in df.columns:
 df.columns = [col.lower() for col in df]
 print(df.tail())
 print(rev.mean())  # 83.01956471935851
-print(rev.median()) # 48.02
-print(rev.mode()) # dominanta, najczęściej wystepująca wrtosć
+print(rev.median())  # 48.02
+print(rev.mode())  # dominanta, najczęściej wystepująca wrtosć
 
 # posortowanie
 print(df.sort_values(by="rating"))
@@ -97,3 +97,12 @@ print(count_movies)
 # Comedy                      32
 # Drama,Romance               31
 # ...                        ...
+count_movies = df.groupby(['genre']).agg(num_movies=("year", "count")).sort_values(by="num_movies", ascending=False)
+print(count_movies)
+#                           num_movies
+# genre
+# Action,Adventure,Sci-Fi           50
+# Drama                             48
+# Comedy,Drama,Romance              35
+# Comedy                            32
+# Drama,Romance                     31
