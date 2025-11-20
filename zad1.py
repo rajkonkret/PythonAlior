@@ -220,10 +220,49 @@ print(arr_col_stack)
 #  [ 8 16]
 #  [ 9 18]]]
 
-arr_row_stack = np.row_stack((arr8, arr9))
-print(arr_row_stack)
+# arr_row_stack = np.row_stack((arr8, arr9))
+# print(arr_row_stack)
 # C:\Users\radek\PycharmProjects\PythonAlior\zad1.py:218:
 # DeprecationWarning: `row_stack` alias is deprecated. Use `np.vstack` directly.
 #   arr_row_stack = np.row_stack((arr8, arr9))
 # [[ 4  5  6]
 #  [ 8 10 12]]
+
+arr10 = np.arange(1, 10).reshape(3, 3)
+arr_split = np.hsplit(arr10, 3)
+print(arr_split)
+# [array([[1],
+#        [4],
+#        [7]]), array([[2],
+#        [5],
+#        [8]]), array([[3],
+#        [6],
+#        [9]])]
+
+# zmaiana typów numpy
+arr11 = np.arange(1, 10).reshape(3, 3)
+print(arr1.dtype)  # int64
+
+arr12 = arr1.astype(float)
+print(arr12.dtype)  # float64
+
+list1 = arr11.tolist()
+print(list1)
+print(type(list1))
+# [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+# <class 'list'>
+
+arr14 = np.arange(1, 21).reshape(5, 4)
+print(arr14)
+# [[ 1  2  3  4]
+#  [ 5  6  7  8]
+#  [ 9 10 11 12]
+#  [13 14 15 16]
+#  [17 18 19 20]]
+# ctrl shift f
+print(arr14[1:3])
+# [[ 5  6  7  8]
+#  [ 9 10 11 12]]
+print(arr14[1:3, [1, 2]])
+# [[ 6  7]
+#  [10 11]]
