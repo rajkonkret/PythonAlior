@@ -132,3 +132,98 @@ print(arr1)
 #  [7 8 9]]
 
 print(np.__version__)  # 2.3.5
+
+# brodcasting - wykonanie operacji na wszystkich elementach tablicy
+arr2 = 2 * arr1
+print(arr2)
+# [[ 2  4  6]
+#  [ 8 10 12]
+#  [14 16 18]]
+
+lista_p = [1, 2, 3]
+print(lista_p * 2)  # [1, 2, 3, 1, 2, 3]
+print(list(range(100)))
+arrx = arr1 + arr2
+print(arrx)
+#  [[ 3  6  9]
+#  [12 15 18]
+#  [21 24 27]]
+
+# hstack() # skleił jako kolumny
+arr3 = np.hstack((arr1, arr2))
+print(arr3)
+# [[ 1  2  3  2  4  6]
+#  [ 4  5  6  8 10 12]
+#  [ 7  8  9 14 16 18]]
+
+# vstack()
+arr4 = np.vstack((arr1, arr2))
+print(arr4)
+# [[ 1  2  3]
+#  [ 4  5  6]
+#  [ 7  8  9]
+#  [ 2  4  6]
+#  [ 8 10 12]
+#  [14 16 18]]
+
+# concatenate()
+arr6 = np.concatenate((arr1, arr2), axis=0)
+print(arr6)
+# [[ 1  2  3]
+#  [ 4  5  6]
+#  [ 7  8  9]
+#  [ 2  4  6]
+#  [ 8 10 12]
+#  [14 16 18]]
+arr7 = np.concatenate((arr1, arr2), axis=1)
+print(arr7)
+# [[ 1  2  3  2  4  6]
+#  [ 4  5  6  8 10 12]
+#  [ 7  8  9 14 16 18]]
+
+arre1 = np.array([1, 2, 3])
+arre2 = np.array([4, 5, 6])
+np.concatenate((arre1, arre2), axis=0)
+# numpy.exceptions.AxisError: axis 1 is out of bounds for array of dimension 1
+# np.concatenate((arre1, arre2), axis=1)
+# [[ 1  2  3  2  4  6]
+#  [ 4  5  6  8 10 12]
+#  [ 7  8  9 14 16 18]]
+
+arr7 = np.dstack((arr1, arr2))
+print(arr7)
+# [[[ 1  2]
+#   [ 2  4]
+#   [ 3  6]]
+#
+#  [[ 4  8]
+#   [ 5 10]
+#   [ 6 12]]
+#
+#  [[ 7 14]
+#   [ 8 16]
+#   [ 9 18]]]
+
+arr8 = np.arange(4, 7)
+arr9 = 2 * arr8
+arr_col_stack = np.column_stack((arr8, arr9))
+print(arr_col_stack)
+# [[[ 1  2]
+#  [ 2  4]
+#  [ 3  6]]
+#
+# [[ 4  8]
+#  [ 5 10]
+#  [ 6 12]]
+#
+# [[ 7 14]
+#  [ 8 16]
+#  [ 9 18]]]
+
+arr_row_stack = np.row_stack((arr8, arr9))
+print(arr_row_stack)
+# C:\Users\radek\PycharmProjects\PythonAlior\zad1.py:218:
+# DeprecationWarning: `row_stack` alias is deprecated. Use `np.vstack` directly.
+#   arr_row_stack = np.row_stack((arr8, arr9))
+# [[ 4  5  6]
+#  [ 8 10 12]]
